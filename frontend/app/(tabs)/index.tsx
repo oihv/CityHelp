@@ -22,7 +22,7 @@ export default function HomeScreen() {
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Felix anjayy</ThemedText>
         <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
+          felix <ThemedText type="defaultSemiBold">anjayyyyyy</ThemedText>anjayyyyyyyy
           Press{' '}
           <ThemedText type="defaultSemiBold">
             {Platform.select({
