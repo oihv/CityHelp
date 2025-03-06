@@ -103,8 +103,9 @@ git stash apply
 
 ## Contributing
 
-1. Create your feature branch (`git checkout -b feature/feature-name`).
-2. Commit your changes (`git commit -m 'Add some feature'`).
-3. Push to the branch (`git push origin feature/feature-name`).
-4. Open a pull request.
+1. Clone the repository.
+2. Create your feature branch (`git checkout -b feature/feature-name`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/feature-name`).
+5. Open a pull request.
 
