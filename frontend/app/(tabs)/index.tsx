@@ -4,7 +4,6 @@ import { Header, Image, SearchBar } from 'react-native-elements';
 import Logo from '@/assets/images/CityHelpLogo.svg';
 
 import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
@@ -14,82 +13,58 @@ export default function HomeScreen() {
   const updateSearch = (text: string): void => {
     setSearch(text);
   };
-  
+
   return (
-    //<ParallaxScrollView
-    //  headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-    //  headerImage={
-    //    <Image
-    //      source={require('@/assets/images/partial-react-logo.png')}
-    //      style={styles.reactLogo}
-    //    />
-    //  }>
     <View>
       <Header
-        style={styles.Header}
+        style={styles.header}
         backgroundColor='#5087F7'
+        containerStyle={styles.headerContainer}
+
+        leftContainerStyle={styles.titleContainer}
         leftComponent={
-          <Logo width={50} height={50} />
+          <View style={styles.titleContainer}>
+            <Logo width={50} height={50} />
+            <ThemedText type="title" style={styles.logoText}>城市助手</ThemedText>
+          </View>
         }
 
-        centerComponent={
+        centerContainerStyle={styles.centerContainer}
+
+        rightContainerStyle={styles.searchContainer}
+        rightComponent={
           <SearchBar
             placeholder="Type Here..."
             placeholderTextColor="Gray"
             onChangeText={updateSearch}
             value={search}
-            containerStyle={{ backgroundColor: 'transparent', borderTopWidth: 0, borderBottomWidth: 0, flex: 1, width: 500 }}
-            style={styles.searchBar}
+            style={styles.search}
+            containerStyle={styles.searchContainer}
             inputContainerStyle={{ backgroundColor: '#fff' }}
           />
         }
       />
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">城市助手</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Felix anjayy</ThemedText>
-        <ThemedText>
-          felix <ThemedText type="defaultSemiBold">anjayyyyyy</ThemedText>anjayyyyyyyy
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
+
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  logoText: {
+    fontSize: 20,
+  },
+  headerContainer: {
+    padding: 0,
+  },
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
+    flex: 2,
+    flexWrap: "nowrap",
   },
   header: {
+    flex: 1,
     alignItems: 'center',
   },
   stepContainer: {
@@ -102,7 +77,29 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
   },
-  searchBar: {
-    width: 500,
+
+  centerContainer: {
+    flex: 1,
+    flexShrink: 1,
   },
+
+  searchContainer: { 
+    borderTopWidth: 0,
+    borderBottomWidth: 0, 
+
+    flex: 4,
+    flexDirection: 'row',
+
+    padding:0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 8,
+  },
+  search: {
+    borderTopWidth: 0,
+    borderBottomWidth: 0, 
+    padding: 0,
+    flex: 1,
+    flexBasis: 'auto',
+  }
 });
