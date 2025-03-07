@@ -1,0 +1,21 @@
+{
+  "name": "cityhelp",
+  "version": "1.0.0",
+  "description": "CityHelp is a React Native project aimed at providing assistance and resources for city dwellers. This application helps users find nearby services, report issues, and stay informed about city events.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oihv/CityHelp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/oihv/CityHelp/issues"
+  },
+  "homepage": "https://github.com/oihv/CityHelp#readme"
+}
