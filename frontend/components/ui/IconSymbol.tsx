@@ -12,8 +12,8 @@ const MAPPING = {
   'image.fill': 'image',
   'house.fill': 'home',
   'map.fill': 'location-pin',
-  'camera.fill': 'camera',
-  'paperplane.fill': 'send',
+  'camera.fill': 'camera-alt',
+  'profile.fill': 'account-circle',
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',
 } as Partial<
