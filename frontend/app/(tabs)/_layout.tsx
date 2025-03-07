@@ -27,6 +27,26 @@ export default function TabLayout() {
         }),
       }}>
       <Tabs.Screen
+        name="imagetest"
+        options={{
+          title: 'Image',
+        }}
+      />
+      <Tabs.Screen
+        name="image"
+        options={{
+          title: 'Image',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="image.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="map"
+        options={{
+          title: 'Map',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
@@ -34,9 +54,16 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="report"
         options={{
-          title: 'Explore',
+          title: 'Report',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Profile',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
         }}
       />
