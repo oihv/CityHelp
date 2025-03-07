@@ -11,6 +11,8 @@ const MAPPING = {
   // See SF Symbols in the SF Symbols app on Mac.
   'image.fill': 'image',
   'house.fill': 'home',
+  'map.fill': 'location-pin',
+  'camera.fill': 'camera',
   'paperplane.fill': 'send',
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',
