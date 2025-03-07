@@ -1,3 +1,4 @@
+import React from 'react';
 import { View, StyleSheet, Platform } from 'react-native';
 import { Header, Image, SearchBar } from 'react-native-elements';
 import Logo from '@/assets/images/CityHelpLogo.svg';
@@ -8,6 +9,12 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
+  const [search, setSearch] = React.useState('');
+
+  const updateSearch = (text: string): void => {
+    setSearch(text);
+  };
+  
   return (
     //<ParallaxScrollView
     //  headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -19,9 +26,22 @@ export default function HomeScreen() {
     //  }>
     <View>
       <Header
+        style={styles.Header}
         backgroundColor='#5087F7'
         leftComponent={
           <Logo width={50} height={50} />
+        }
+
+        centerComponent={
+          <SearchBar
+            placeholder="Type Here..."
+            placeholderTextColor="Gray"
+            onChangeText={updateSearch}
+            value={search}
+            containerStyle={{ backgroundColor: 'transparent', borderTopWidth: 0, borderBottomWidth: 0, flex: 1, width: 500 }}
+            style={styles.searchBar}
+            inputContainerStyle={{ backgroundColor: '#fff' }}
+          />
         }
       />
       <ThemedView style={styles.titleContainer}>
@@ -59,10 +79,6 @@ export default function HomeScreen() {
           <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
       </ThemedView>
-      <Image
-        source={require('@/assets/images/CityHelpText.svg')}
-        style={styles.logo}
-      />
     </View>
   );
 }
@@ -73,6 +89,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
   },
+  header: {
+    alignItems: 'center',
+  },
   stepContainer: {
     gap: 8,
     marginBottom: 8,
@@ -82,5 +101,8 @@ const styles = StyleSheet.create({
     width: 290,
     bottom: 0,
     left: 0,
+  },
+  searchBar: {
+    width: 500,
   },
 });
