@@ -1,9 +1,8 @@
 import React from 'react';
-import { View, StyleSheet, Platform } from 'react-native';
-import { Header, Image, SearchBar } from 'react-native-elements';
+import { View, StyleSheet, Platform, TouchableOpacity } from 'react-native';
+import { Header, SearchBar } from 'react-native-elements';
 import Logo from '@/assets/images/CityHelpLogo.svg';
 
-import { HelloWave } from '@/components/HelloWave';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
@@ -15,7 +14,7 @@ export default function HomeScreen() {
   };
 
   return (
-    <View>
+    <ThemedView lightColor='#E4EBF6'>
       <Header
         style={styles.header}
         backgroundColor='#5087F7'
@@ -45,7 +44,15 @@ export default function HomeScreen() {
         }
       />
 
-    </View>
+      <ThemedView>
+        <TouchableOpacity>
+          <ThemedView>
+            <ThemedText>Test</ThemedText>
+          </ThemedView>
+        </TouchableOpacity>
+      </ThemedView>
+
+    </ThemedView>
   );
 }
 
