@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity, Dimensions } from 'react-native';
 
 const { width, height } = Dimensions.get('window'); 
+=======
+import { Text, View, StyleSheet } from 'react-native';
+import {Image} from 'react-native';
+>>>>>>> e4a0633 (Add buttons in the home page using the new HomeButton component)
 
 export default function Profile() {
   const handleButtonPress = (buttonName: string) => {
@@ -10,6 +15,7 @@ export default function Profile() {
 
   return (
     <View style={styles.container}>
+<<<<<<< HEAD
       {/* Top Blue Background */}
       <View style={styles.topSection}>
         {/* Circle Container */}
@@ -53,6 +59,11 @@ export default function Profile() {
           <Text style={styles.footerText}>Privacy Center</Text>
         </View>
       </View>
+=======
+      <Text style={styles.text}>Profile</Text>
+      <Image 
+      source={require('@/assets/images/MapIcon.png')} />
+>>>>>>> e4a0633 (Add buttons in the home page using the new HomeButton component)
     </View>
   );
 }
