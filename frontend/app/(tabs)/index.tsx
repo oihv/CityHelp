@@ -6,6 +6,7 @@ import Logo from '@/assets/images/CityHelpLogo.svg';
 
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import HomeButton from '@/components/HomeButton';
 
 export default function HomeScreen() {
   const [search, setSearch] = React.useState('');
@@ -43,36 +44,12 @@ export default function HomeScreen() {
       />
 
       <ThemedView style={styles.buttonsContainer}>
-        <TouchableOpacity style={styles.buttons}>
-          <ThemedView style={styles.buttonText}>
-            <ThemedText>Test</ThemedText>
-          </ThemedView>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttons}>
-          <ThemedView style={styles.buttonText}>
-            <ThemedText>Test</ThemedText>
-          </ThemedView>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttons}>
-          <ThemedView style={styles.buttonText}>
-            <ThemedText>Test</ThemedText>
-          </ThemedView>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttons}>
-          <ThemedView style={styles.buttonText}>
-            <ThemedText>Test</ThemedText>
-          </ThemedView>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttons}>
-          <ThemedView style={styles.buttonText}>
-            <ThemedText>Test</ThemedText>
-          </ThemedView>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttons}>
-          <ThemedView style={styles.buttonText}>
-            <ThemedText>Test</ThemedText>
-          </ThemedView>
-        </TouchableOpacity>
+        <HomeButton imageName="MapIcon" text="Map" />
+        <HomeButton imageName="MessageBotIcon" text="AI" />
+        <HomeButton imageName="UserIcon" text="Profile" />
+        <HomeButton imageName="CallIcon" text="Emergency" />
+        <HomeButton imageName="DonateIcon" text="Donate" />
+        <HomeButton imageName="MoreIcon" text="Others" />
       </ThemedView>
 
     </ThemedView>
@@ -82,7 +59,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   buttonsContainer: {
     display: 'flex',
-    height: 150,
+    height: 170,
     margin: 15,
     flexWrap: 'wrap',
     flexDirection: 'row',
