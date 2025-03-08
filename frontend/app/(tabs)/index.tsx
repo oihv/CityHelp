@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Platform, TouchableOpacity } from 'react-native';
-import { Header, SearchBar } from 'react-native-elements';
+import { Header } from 'react-native-elements';
+import { Searchbar } from 'react-native-paper';
 import Logo from '@/assets/images/CityHelpLogo.svg';
 
 import { ThemedText } from '@/components/ThemedText';
@@ -32,14 +33,11 @@ export default function HomeScreen() {
 
         rightContainerStyle={styles.searchContainer}
         rightComponent={
-          <SearchBar
+          <Searchbar
             placeholder="Type Here..."
-            placeholderTextColor="Gray"
-            onChangeText={updateSearch}
-            value={search}
-            style={styles.search}
-            containerStyle={styles.searchContainer}
-            inputContainerStyle={{ backgroundColor: '#fff' }}
+          onChangeText = {updateSearch}
+          value = {search}
+          style = {styles.search}
           />
         }
       />
@@ -90,21 +88,21 @@ const styles = StyleSheet.create({
     flexShrink: 1,
   },
 
-  searchContainer: { 
+  searchContainer: {
     borderTopWidth: 0,
-    borderBottomWidth: 0, 
+    borderBottomWidth: 0,
 
     flex: 4,
     flexDirection: 'row',
 
-    padding:0,
+    padding: 0,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8,
   },
   search: {
     borderTopWidth: 0,
-    borderBottomWidth: 0, 
+    borderBottomWidth: 0,
     padding: 0,
     flex: 1,
     flexBasis: 'auto',

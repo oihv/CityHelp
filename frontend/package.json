@@ -43,16 +43,25 @@
     "react-native-elements": "^3.4.3",
     "react-native-dotenv": "^3.4.11",
     "react-native-gesture-handler": "~2.20.2",
+<<<<<<< HEAD
     "react-native-image-crop-picker": "^0.42.0",
     "react-native-maps": "1.18.0",
+=======
+    "react-native-maps": "1.18.0",
+    "react-native-paper": "^5.13.1",
+>>>>>>> 74315c2 (Change searchbar library from 'react-native-elements' to 'react-native-paper')
     "react-native-reanimated": "~3.16.1",
     "react-native-safe-area-context": "4.12.0",
     "react-native-screens": "~4.4.0",
     "react-native-vision-camera": "^4.6.4",
     "react-native-svg": "15.8.0",
     "react-native-web": "~0.19.13",
+<<<<<<< HEAD
     "react-native-webview": "13.12.5",
     "react-redux": "^9.2.0"
+=======
+    "react-native-webview": "13.12.5"
+>>>>>>> 74315c2 (Change searchbar library from 'react-native-elements' to 'react-native-paper')
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
