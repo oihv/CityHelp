@@ -35,16 +35,41 @@ export default function HomeScreen() {
         rightComponent={
           <Searchbar
             placeholder="Type Here..."
-          onChangeText = {updateSearch}
-          value = {search}
-          style = {styles.search}
+            onChangeText={updateSearch}
+            value={search}
+            style={styles.search}
           />
         }
       />
 
-      <ThemedView>
-        <TouchableOpacity>
-          <ThemedView>
+      <ThemedView style={styles.buttonsContainer}>
+        <TouchableOpacity style={styles.buttons}>
+          <ThemedView style={styles.buttonText}>
+            <ThemedText>Test</ThemedText>
+          </ThemedView>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttons}>
+          <ThemedView style={styles.buttonText}>
+            <ThemedText>Test</ThemedText>
+          </ThemedView>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttons}>
+          <ThemedView style={styles.buttonText}>
+            <ThemedText>Test</ThemedText>
+          </ThemedView>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttons}>
+          <ThemedView style={styles.buttonText}>
+            <ThemedText>Test</ThemedText>
+          </ThemedView>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttons}>
+          <ThemedView style={styles.buttonText}>
+            <ThemedText>Test</ThemedText>
+          </ThemedView>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttons}>
+          <ThemedView style={styles.buttonText}>
             <ThemedText>Test</ThemedText>
           </ThemedView>
         </TouchableOpacity>
@@ -55,6 +80,28 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  buttonsContainer: {
+    display: 'flex',
+    height: 150,
+    margin: 15,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttons: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '30%',
+    height: '50%',
+    flexGrow: 1,
+  },
+  buttonText: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   logoText: {
     fontSize: 20,
   },
