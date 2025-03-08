@@ -14,7 +14,7 @@ export default function HomeScreen() {
   };
 
   return (
-    <ThemedView lightColor='#E4EBF6'>
+    <ThemedView lightColor='#E4EBF6' darkColor='#E4EBF6'>
       <Header
         style={styles.header}
         backgroundColor='#5087F7'
