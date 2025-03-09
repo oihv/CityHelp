@@ -75,6 +75,17 @@ export default function App() {
                     </Marker>
                 ))}
             </MapView>
+
+            {/* Add AI Chat Button */}
+            <TouchableOpacity 
+                style={styles.chatButton}
+                onPress={() => navigation.navigate('Chat')}
+            >
+                <Image
+                    source={require('../../assets/images/ai.png')}
+                    style={styles.chatIcon}
+                />
+            </TouchableOpacity>
         </View>
     );
 }
@@ -103,5 +114,22 @@ const styles = StyleSheet.create({
         width: 120,
         height: 80,
         backgroundColor: '#ccc' // Placeholder background color
+    },
+    chatButton: {
+        position: 'absolute',
+        bottom: 30,
+        right: 20,
+        backgroundColor: 'white',
+        padding: 12,
+        borderRadius: 50,
+        elevation: 5,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+    },
+    chatIcon: {
+        width: 40,
+        height: 40,
     },
 });
