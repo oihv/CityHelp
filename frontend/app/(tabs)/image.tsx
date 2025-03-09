@@ -1,109 +1,125 @@
-import { StyleSheet, Image, Platform } from 'react-native';
-
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
+import React from 'react';
+import { StyleSheet, Image, TextInput, ScrollView, View } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 
+
 export default function TabTwoScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Explore</ThemedText>
-      </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
-        </ThemedText>
-        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Custom fonts">
-        <ThemedText>
-          Open <ThemedText type="defaultSemiBold">app/_layout.tsx</ThemedText> to see how to load{' '}
-          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
-            custom fonts such as this one.
-          </ThemedText>
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user's current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText>{' '}
-          library to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
-      </Collapsible>
-    </ParallaxScrollView>
+    <ThemedView style={styles.container}>
+      <View style={styles.header}>
+        <ThemedText style={styles.headerText}>Feeds</ThemedText>
+        <View style={styles.searchContainer}>
+          <TextInput style={styles.searchInput} placeholder="Search" />
+          <IconSymbol name="camera" size={24} color="#fff" style={styles.cameraIcon} />  // tambah icon scan yang disamping search bar, yang bisa akses kamera 
+        </View>
+      </View>
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.postContainer}>
+          <View style={styles.postHeader}>
+            <IconSymbol name="user" size={24} style={styles.profileIcon} />
+            <ThemedText style={styles.username}>Username1</ThemedText>
+          </View>
+          <Image source={{ uri: 'https://example.com/image2.jpg' }} style={styles.postImage} />
+          <ThemedText style={styles.postCaption}>Caption for the first post</ThemedText>
+          <TextInput style={styles.commentInput} placeholder="Write a comment..." />
+        </View>
+        <View style={styles.postContainer}>
+          <View style={styles.postHeader}>
+            <IconSymbol name="user" size={24} style={styles.profileIcon} />
+            <ThemedText style={styles.username}>Username2</ThemedText>
+          </View>
+          <Image source={{ uri: 'https://example.com/image2.jpg' }} style={styles.postImage} />
+          <TextInput style={styles.commentInput} placeholder="Write a comment..." />
+        </View>
+        {/* Add more posts as needed */}
+      </ScrollView>
+    </ThemedView>
   );
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
   },
-  titleContainer: {
+  header: {
+    paddingTop: 40,
+    paddingBottom: 10,
+    paddingHorizontal: 15,
+    backgroundColor: '#007AFF',
     flexDirection: 'row',
-    gap: 8,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  headerText: {
+    color: '#fff',
+    fontSize: 24,
+  
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '57%', 
+    paddingHorizontal: 15, 
+  },
+  searchInput: {
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    height: 40,
+    flex: 1,
+  },
+  cameraIcon: {
+    marginLeft: 25,
+    color: '#fff',
+  },
+  scrollView: {
+    paddingHorizontal: 15,
+  },
+  postContainer: {
+    backgroundColor: 'rgb(201, 234, 247)', 
+    padding: 10,
+    marginBottom: 15,
+  },
+  postHeader: {
+    backgroundColor: 'rgb(255, 255, 255)',
+    flexDirection: 'row',
+    padding: 5,
+    width: '100%',
+    alignItems: 'center',
+  },
+  profileIcon: {
+    backgroundColor: 'rgb(131, 131, 131)',
+    width: 40,
+    height: 40, 
+    borderRadius: 20, 
+    marginRight: 10,
+  },
+  username: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  postImage: {
+    width: '100%',
+    height: 200,
+    borderRadius: 10,
+    marginBottom: 10,
+  },
+  postCaption: {
+    backgroundColor: 'rgb(255, 255, 255)',
+    borderRadius: 10,
+    height: 140,
+    fontSize: 16,
+    marginBottom: 10,
+  },
+  commentInput: {
+    backgroundColor: 'rgb(255, 255, 255)',
+    borderColor: 'rgb(201, 234, 247)',
+    borderWidth: 1,
+    borderRadius: 40,
+    paddingHorizontal: 24,
+    height: 40,
   },
 });
