@@ -44,12 +44,12 @@ export default function HomeScreen() {
       />
 
       <ThemedView style={styles.buttonsContainer}>
-        <HomeButton imageName="MapIcon" text="Map" />
-        <HomeButton imageName="MessageBotIcon" text="AI" />
-        <HomeButton imageName="UserIcon" text="Profile" />
-        <HomeButton imageName="CallIcon" text="Emergency" />
-        <HomeButton imageName="DonateIcon" text="Donate" />
-        <HomeButton imageName="MoreIcon" text="Others" />
+        <HomeButton imageName="MapIcon" text="Map" link="/map"/>
+        <HomeButton imageName="MessageBotIcon" text="AI" link="/chatai"/>
+        <HomeButton imageName="UserIcon" text="Profile" link="/profile" />
+        <HomeButton imageName="CallIcon" text="Emergency" link="/emergency" />
+        <HomeButton imageName="DonateIcon" text="Donate" link="/donate" />
+        <HomeButton imageName="MoreIcon" text="Others" link="/others" />
       </ThemedView>
 
     </ThemedView>
