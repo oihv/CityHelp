@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Platform, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Platform } from 'react-native';
 import { Header } from 'react-native-elements';
 import { Searchbar } from 'react-native-paper';
 import Logo from '@/assets/images/CityHelpLogo.svg';
