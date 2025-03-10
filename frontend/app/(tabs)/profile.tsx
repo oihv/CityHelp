@@ -53,8 +53,6 @@ export default function Profile() {
           <Text style={styles.footerText}>Privacy Center</Text>
         </View>
       </View>
-      <Image 
-      source={require('@/assets/images/MapIcon.png')} />
     </View>
   );
 }
