@@ -2,7 +2,8 @@ import { TouchableOpacity, StyleSheet } from 'react-native';
 import { ThemedView } from '@/components/ThemedView';
 import { ThemedText } from '@/components/ThemedText';
 import { Image } from 'react-native';
-import { Colors } from '@/constants/Colors'
+import { Colors } from '@/constants/Colors';
+import { Link } from 'expo-router';
 
 const imageMap: { [key: string]: any } = {
   'MapIcon': require('@/assets/images/MapIcon.png'),
@@ -13,19 +14,21 @@ const imageMap: { [key: string]: any } = {
   'MoreIcon': require('@/assets/images/MoreIcon.png'),
 };
 
-export default function HomeButton({ imageName, text }: { imageName: string, text: string }) {
+export default function HomeButton({ imageName, text, link }: { imageName: string, text: string, link: string }) {
   return (
-    <TouchableOpacity style={styles.buttons}>
-      <ThemedView style={styles.buttonText}>
-        <Image 
-          style={styles.image}
-          resizeMode={'cover'}
-          source={imageMap[imageName]} 
-          alt={text}
-        />
-        <ThemedText>{text}</ThemedText>
-      </ThemedView>
-    </TouchableOpacity>
+    <Link href={link as any} asChild>
+      <TouchableOpacity style={styles.buttons}>
+        <ThemedView style={styles.buttonText}>
+          <Image 
+            style={styles.image}
+            resizeMode={'cover'}
+            source={imageMap[imageName]} 
+            alt={text}
+          />
+          <ThemedText>{text}</ThemedText>
+        </ThemedView>
+      </TouchableOpacity>
+    </Link>
   );
 }
 
