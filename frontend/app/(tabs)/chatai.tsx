@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, FlatList } from 'react-native';
 import axios from 'axios';
+import { Header } from 'react-native-elements';
 
 const API_KEY: string = process.env.EXPO_PUBLIC_API_KEY; // Store this securely!
 
@@ -53,11 +54,7 @@ export default function ChatScreen() {
         }
       );
 
-      console.log("API Response:", response.data); // Debugging
-
       const aiContent = response.data.output?.choices?.[0]?.message?.content || "No response";
-
-      console.log("AI Chat content: ", aiContent);
 
       const aiMessage = {
         id: Date.now().toString(),
@@ -74,6 +71,9 @@ export default function ChatScreen() {
 
   return (
     <View style={styles.container}>
+      <Header
+        backgroundColor='#5087F7'
+      />
       <FlatList
         data={messages}
         renderItem={({ item }) => (
