@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: Colors['light']['elementBackground'],
   },
   image: {
     height: 50,
@@ -52,5 +53,6 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     borderRadius: 15,
     backgroundColor: Colors['light']['buttonBackground'],
+    elevation: 2,
   },
 })
