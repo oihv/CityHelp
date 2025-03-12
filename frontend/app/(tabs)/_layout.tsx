@@ -18,6 +18,8 @@ export default function TabLayout() {
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
+        tabBarActiveBackgroundColor: Colors['light']['tabBackgroundColor'],
+        tabBarInactiveBackgroundColor: Colors['light']['tabBackgroundColor'],
         tabBarStyle: Platform.select({
           ios: {
             // Use a transparent background on iOS to show the blur effect
@@ -30,35 +32,35 @@ export default function TabLayout() {
         name="image"
         options={{
           title: 'Image',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="image.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="image.fill" color={'#fff'} />,
         }}
       />
       <Tabs.Screen
         name="map"
         options={{
           title: 'Map',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="map.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="map.fill" color={'#fff'} />,
         }}
       />
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={'#fff'} />,
         }}
       />
       <Tabs.Screen
         name="report"
         options={{
           title: 'Report',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="camera.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="camera.fill" color={'#fff'} />,
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="profile.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="profile.fill" color={'#fff'} />,
         }}
       />
     </Tabs>
