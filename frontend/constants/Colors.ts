@@ -14,6 +14,7 @@ export const Colors = {
     buttonBackground: '#EAFBFF',
     tint: tintColorLight,
     icon: '#687076',
+    tabBackgroundColor: '#5087F7',
     tabIconDefault: '#687076',
     tabIconSelected: tintColorLight,
   },

@@ -7,6 +7,7 @@ import Logo from '@/assets/images/CityHelpLogo.svg';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import HomeButton from '@/components/HomeButton';
+import { Colors } from '@/constants/Colors';
 
 export default function HomeScreen() {
   const [search, setSearch] = React.useState('');
@@ -59,12 +60,18 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   buttonsContainer: {
     display: 'flex',
-    height: 170,
-    margin: 15,
+    height: 200,
+    padding: 16,
+    margin: 16,
     flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    borderWidth: 4,
+    borderRadius: 4,
+    backgroundColor: Colors['light']['elementBackground'],
+    borderColor: Colors['light']['elementBackground'],
+    elevation: 4,
   },
   buttons: {
     display: 'flex',
