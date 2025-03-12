@@ -63,6 +63,13 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="profile.fill" color={'#fff'} />,
         }}
       />
+      <Tabs.Screen
+        name="chatai"
+        options={{
+          tabBarButton: (props) => null, // This will hide the ChatAI tab from the bottom navigation bar
+          tabBarStyle: { display: 'none' }, //this is additional if you want to hide the whole bottom tab from the screen version 6.x
+        }}
+      />
     </Tabs>
   );
 }
